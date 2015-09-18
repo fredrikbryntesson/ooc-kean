@@ -2,4 +2,8 @@ Name: ooc Collections
 Description: Collections Library
 SourcePath: source/collections
 Requires: ooc-unit, ooc-base, ooc-sdk-lite
-Imports: Vector, VectorList, PointerVector, PointerVectorList, SortedVectorList, Queue, SynchronizedQueue
+Imports: Vector, VectorList, PointerVector, PointerVectorList, SortedVectorList, Queue
+Imports: SynchronizedQueue 
+version (cogneco) {
+ Libs: ./isaac.res
+}
