@@ -129,7 +129,7 @@ Text: cover {
 		this
 	}
 	free: func@ -> Bool {
-		this _buffer free()
+		this _buffer free()asdf
 	}
 	free: func@ ~withCriteria (criteria: Owner) -> Bool {
 		this _buffer free(criteria)
