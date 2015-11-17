@@ -86,11 +86,7 @@ IntBox2D: cover {
 		This new(left, top, width, height)
 	}
 	union: func ~point (point: IntPoint2D) -> This {
-		left := Int minimum~two(this left, point x)
-		top := Int minimum~two(this top, point y)
-		width := Int maximum~two(0, Int maximum~two(this right, point x) - left)
-		height := Int maximum~two(0, Int maximum~two(this bottom, point y) - top)
-		This new(left, top, width, height)
+		This new(this leftTop minimum(point), this rightBottom maximum(point))
 	}
 	contains: func (point: IntPoint2D) -> Bool {
 		this left <= point x && point x < this right && this top <= point y && point y < this bottom
@@ -123,9 +119,9 @@ IntBox2D: cover {
 	operator as -> String { this toString() }
 	toString: func -> String { "#{this leftTop toString()}, #{this size toString()}" }
 	parse: static func (input: Text) -> This {
-		array := input split(',')
-		result := This new(array[0] toInt(), array[1] toInt(), array[2] toInt(), array[3] toInt())
-		array free()
+		parts := input split(',')
+		result := This new(parts[0] toInt(), parts[1] toInt(), parts[2] toInt(), parts[3] toInt())
+		parts free()
 		result
 	}
 	create: static func (leftTop: IntPoint2D, size: IntSize2D) -> This { This new(leftTop, size) }
