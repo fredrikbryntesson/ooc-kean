@@ -135,7 +135,7 @@ Text: cover {
 		this _buffer free(criteria)
 	}
 	slice: func (start, distance: Int) -> This {
-		result: This
+		result: Thisasdf
 		if (start == 0 && distance == this count)
 			result = this
 		else {
