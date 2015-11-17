@@ -144,7 +144,7 @@ Text: cover {
 				result = result copy() // TODO: Could we be smarter here?
 			this free(Owner Receiver)
 		}
-		result
+		resultadsfasdf
 	}
 	split: func ~character (separator: Char) -> VectorList<This> {
 		this split(This new(separator))
