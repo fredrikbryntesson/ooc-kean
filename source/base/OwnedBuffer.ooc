@@ -27,7 +27,7 @@ OwnedBuffer: cover {
 	owner ::= this _owner
 	isOwned ::= this _owner != Owner Unknown && this _owner != Owner Static && this _owner != Owner Stack && this _pointer != null
 	init: func@ {
-		this init(null, 0, Owner Unknown)
+		this init(null, 0, Owner Unknown)asdf
 	}
 	init: func@ ~fromSize (size: Int, owner := Owner Receiver) {
 		this init(gc_malloc(size), size, owner)adf
