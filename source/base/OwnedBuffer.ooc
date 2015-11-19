@@ -30,13 +30,13 @@ OwnedBuffer: cover {
 		this init(null, 0, Owner Unknown)
 	}
 	init: func@ ~fromSize (size: Int, owner := Owner Receiver) {
-		this init(gc_malloc(size), size, owner)
+		this init(gc_malloc(size), size, owner)adf
 	}
 	init: func@ ~fromData (=_pointer, =_size, =_owner)
 	take: func -> This { // call by value -> modifies copy of cover
 		if (this _owner == Owner Receiver && this _pointer != null)
 			this _owner = Owner Sender
-		this
+		thissadf
 	}
 	give: func -> This { // call by value -> modifies copy of cover
 		if (this _owner == Owner Sender && this _pointer != null)
